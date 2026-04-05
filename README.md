@@ -14,8 +14,8 @@ uv add git+https://github.com/kauelima21/SESMailer.git
 from sesmailer import SESMailer
 
 mailer = SESMailer()
-mailer.set_from("no-reply@example.com", from_name="Minha App")
-mailer.add_address("destinatario@example.com", address_name="Joao")
+mailer.set_from("no-reply@example.com", name="Minha App")
+mailer.add_address("destinatario@example.com", name="Joao")
 mailer.Subject = "Bem-vindo"
 mailer.Body = "Ola, Joao!"
 mailer.send()
@@ -79,11 +79,11 @@ def handler(event, context):
 | Metodo | Descricao |
 |---|---|
 | `SESMailer(ses_client=None)` | Cria instancia. Aceita um `boto3.client("ses")` existente. |
-| `.set_from(email, from_name=None)` | Define o remetente. |
-| `.add_address(email, address_name=None)` | Adiciona destinatario (To). |
-| `.add_cc(email, address_name=None)` | Adiciona copia (CC). |
-| `.add_bcc(email, address_name=None)` | Adiciona copia oculta (BCC). |
-| `.add_reply_to(email, address_name=None)` | Adiciona endereco de resposta (Reply-To). |
+| `.set_from(email, name=None)` | Define o remetente. |
+| `.add_address(email, name=None)` | Adiciona destinatario (To). |
+| `.add_cc(email, name=None)` | Adiciona copia (CC). |
+| `.add_bcc(email, name=None)` | Adiciona copia oculta (BCC). |
+| `.add_reply_to(email, name=None)` | Adiciona endereco de resposta (Reply-To). |
 | `.add_attachment(file_path, filename=None)` | Anexa arquivo. |
 | `.is_html(bool)` | Define se o corpo e HTML. |
 | `.send()` | Envia o e-mail via SES. Levanta `ClientError` em caso de falha. |

@@ -30,32 +30,32 @@ class SESMailer:
             self._From = from_email
         return self
 
-    def add_address(self, mail_address: str, address_name: str = None):
-        if address_name:
-            self._ToAddresses.append(f"{address_name} <{mail_address}>")
+    def add_address(self, address: str, name: str = None):
+        if name:
+            self._ToAddresses.append(f"{name} <{address}>")
         else:
-            self._ToAddresses.append(mail_address)
+            self._ToAddresses.append(address)
         return self
 
-    def add_cc(self, mail_address: str, address_name: str = None):
-        if address_name:
-            self._Cc.append(f"{address_name} <{mail_address}>")
+    def add_cc(self, address: str, name: str = None):
+        if name:
+            self._Cc.append(f"{name} <{address}>")
         else:
-            self._Cc.append(mail_address)
+            self._Cc.append(address)
         return self
 
-    def add_bcc(self, mail_address: str, address_name: str = None):
-        if address_name:
-            self._Bcc.append(f"{address_name} <{mail_address}>")
+    def add_bcc(self, address: str, name: str = None):
+        if name:
+            self._Bcc.append(f"{name} <{address}>")
         else:
-            self._Bcc.append(mail_address)
+            self._Bcc.append(address)
         return self
 
-    def add_reply_to(self, mail_address: str, address_name: str = None):
-        if address_name:
-            self._ReplyTo.append(f"{address_name} <{mail_address}>")
+    def add_reply_to(self, address: str, name: str = None):
+        if name:
+            self._ReplyTo.append(f"{name} <{address}>")
         else:
-            self._ReplyTo.append(mail_address)
+            self._ReplyTo.append(address)
         return self
 
     def add_attachment(self, file_path: str, filename: str = None):
