@@ -23,11 +23,11 @@ class SESMailer:
 
         self._ses_client = ses_client or boto3.client("ses")
 
-    def set_from(self, from_email: str, from_name: str = None):
-        if from_name:
-            self._From = f"{from_name} <{from_email}>"
+    def set_from(self, address: str, name: str = None):
+        if name:
+            self._From = f"{name} <{address}>"
         else:
-            self._From = from_email
+            self._From = address
         return self
 
     def add_address(self, address: str, name: str = None):
