@@ -1,4 +1,4 @@
-# pymailer
+# SESMailer
 
 Wrapper leve sobre o Amazon SES para envio de e-mails em projetos Python. Otimizado para AWS Lambda.
 
